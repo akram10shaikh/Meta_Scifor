@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <title>Update</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container mt-3">
+		<div class="row">
+			<h1 align="center">Welcome to the world</h1><br><br>
+			<div class="col col-sm-12">
+				{% for i in data %}
+				<form action="{% url 'edit' %}" method="POST" class="form-group">
+					{% csrf_token %}
+          <label>ID</label><br>
+					<input type="number" name="i1" class="form-control" value="{{ i.id }}" en=><br>
+					<label>City</label><br>
+					<label>Name</label><br>
+					<input type="text" name="n1" class="form-control" value="{{ i.name }}" required><br>
+					<label>City</label><br>
+					<input type="text" name="c1" class="form-control" value="{{ i.city }}" required><br>
+					<label>Phone</label><br>
+					<input type="text" name="p1" class="form-control" value="{{ i.phone }}" required><br><br>
+					<input type="submit" class="btn btn-primary" style="width:100px">
+					<a href="{% url 'showdata' %}" class="btn btn-success" style="width:100px;margin-left:50px;">Back</a>
+				</form>
+        {% endfor %}
+			</div>
+		</div>
+	  <br>
+  </div>
+</body>
+</html>
