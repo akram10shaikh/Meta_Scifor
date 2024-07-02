@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Index</title>
+</head>
+<body style="background-color:light">
+
+<div class="container mt-3">
+    <h1 align="center" style="font-color:panache;">Welcome to Quotes Generator</h1><br><br>
+    <hr>
+
+       <br><br><br>
+    <div class="row" align="center">
+        <div class="col col-sm-4">
+             <p style="font-size:20px">Generate the quotes by clicking the button.<br>It will generate the random quotes from the site.</p>
+
+
+        </div>
+        <div class="col col-sm-8" >
+            <form action="{% url 'show' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" style="width:300px;height:100px" class="btn btn-primary" value="CLick for Quotes">
+                </form>
+        </div>
+    </div>
+    <br><br>
+
+    {% if quotes %}
+        <h3>Quotes: <br>{{ quotes.content }}</h3>
+    {% endif %}
+
+
+
+
+
+</div>
+
+</body>
+</html>
