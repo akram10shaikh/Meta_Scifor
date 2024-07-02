@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Website</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container mt-3">
+    <h1 align="center">Blog Using Rest Framework</h1>
+     <br><br><br>
+    <h3 align="left" style="color:darkblue;">Category</h3>
+    <div class="row">
+        {% for j in cat %}
+        <div class="col col-sm-3">
+            <div class="card" style="width:200px;">
+                <img src="{{ j.image.url }}" alt="{{ ij.image.url }}" class="card-img-top" style="width:200px;height:200px">
+            <div class="card-body">
+                <h4 class="card-title">{{ j.title }}</h4>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br><br>
+
+
+   <h3 align="left" style="color:darkblue;">Post</h3>
+    <div class="row">
+        {% for i in post %}
+        <div class="col col-sm-4">
+            <div class="card" style="width:300px">
+                <img src="{{ i.image.url }}" alt="{{ i.image.url }}" class="card-img-top">
+                <div class="card-body">
+                <h4 class="card-title">{{ i.title }}</h4>
+                <p class="card-text">{{ i.content }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+</body>
+</html>
